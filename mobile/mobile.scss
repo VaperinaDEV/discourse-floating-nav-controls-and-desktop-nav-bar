@@ -20,7 +20,7 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
                 border-bottom-color: var(--quaternary);
               }
               &:focus,
-              &:active {
+              &.active {
                 color: var(--quaternary);
               }
             }
