@@ -46,10 +46,12 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
         > *:not(:last-child) {
           margin-right: 0;
         }
+        .btn {
+          transition: background 0.25s;
+        }
         #create-topic {
           order: 1;
           margin-right: 0;
-          transition: background 0.25s;
         }
         .anon & {
           display: none;
