@@ -20,16 +20,26 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
       .anon & {
         display: none;
       }
-      .nav-controls-hidden & {
-        bottom: -60px;
-        transition: bottom 0.2s ease-in;
-      }
     }
   }
   #reply-control.draft {
     bottom: -60px;
     transition: bottom 0.2s ease-in;
-    body.nav-controls-hidden & {
+  }
+}
+
+body.nav-controls-hidden {
+  &.navigation-topics,
+  &.categories-list,
+  &.tags-page,
+  &[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
+    .list-controls {
+      .navigation-container .navigation-controls {
+        bottom: -60px;
+        transition: bottom 0.2s ease-in;
+      }
+    }
+    #reply-control.draft {
       bottom: 0;
     }
   }
