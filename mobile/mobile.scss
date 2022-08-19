@@ -1,0 +1,35 @@
+.list-controls {
+  .navigation-container .navigation-controls {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 0.5em;
+    margin-bottom: env(safe-area-inset-bottom);
+    max-width: calc(100% - 20px);
+    box-sizing: border-box;
+    box-shadow: shadow("card");
+    background: var(--secondary);
+    transition: bottom 0.2s ease-in;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    z-index: 200;
+    .anon & {
+      display: none;
+    }
+    .nav-controls-hidden & {
+      bottom: -60px;
+      transition: bottom 0.2s ease-in;
+    }
+  }
+  #reply-control.draft {
+    bottom: -60px;
+    transition: bottom 0.2s ease-in;
+    body.nav-controls-hidden & {
+      bottom: 0;
+    }
+  }
+}
+
+body:not(.footer-nav-ipad) .footer-nav {
+  display: none;
+}
