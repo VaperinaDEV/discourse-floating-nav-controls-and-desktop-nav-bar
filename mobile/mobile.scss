@@ -14,8 +14,6 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
       box-shadow: shadow("card");
       background: var(--secondary);
       transition: bottom 0.2s ease-in;
-      flex-wrap: nowrap;
-      overflow-x: auto;
       z-index: 200;
       #create-topic {
         order: 1;
