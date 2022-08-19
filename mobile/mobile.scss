@@ -17,6 +17,11 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
       flex-wrap: nowrap;
       overflow-x: auto;
       z-index: 200;
+      #create-topic {
+        order: 1;
+        margin-left: 0.5em;
+        margin-right: 0;
+      }
       .anon & {
         display: none;
       }
