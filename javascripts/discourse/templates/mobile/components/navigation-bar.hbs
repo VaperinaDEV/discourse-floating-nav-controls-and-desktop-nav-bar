@@ -1,4 +1,4 @@
-{{#if (theme-setting 'desktop_navigation_enabled')}}
+{{#if (theme-setting 'desktop_navigation_bar_enabled')}}
   {{#each this.navItems as |navItem|}}
     <NavigationItem @content={{navItem}} @filterMode={{this.filterMode}} @category={{this.category}} @class={{concat "nav-item_" navItem.name}} />
   {{/each}}
