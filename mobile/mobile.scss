@@ -43,6 +43,9 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
         background: var(--secondary);
         transition: bottom 0.2s ease-in;
         z-index: 200;
+        > *:not(:last-child) {
+          margin-right: 0;
+        }
         #create-topic {
           order: 1;
           margin-right: 0;
