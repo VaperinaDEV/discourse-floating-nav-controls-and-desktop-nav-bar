@@ -5,26 +5,36 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
   .list-controls {
     .navigation-container {
       @if $desktop-navigation-bar-enabled == "true" {
+        #navigation-bar {
+          margin-bottom: 1em;
+          margin-top: -0.25em;
+        }
         .nav-pills {
           > li {
+            margin-right: 0.5em;
             border: none;
             a {
               transition: none;
-              border-bottom: 3px solid transparent;
-              padding: 0 0.25em;
-              margin: 0.25em 0.5em;
+              font-size: var(--font-up-1);
+              border-radius: #{$nav-bar-item-rounding};
+              border-bottom: #{$nav-bar-items-border-bottom-size} solid #{$nav-bar-items-border-bottom-color};
+              padding: 0 #{$nav-bar-item-padding-size};
+              margin-right: 0.25em;
+              margin-bottom: 0.25em;
+              background-color: #{$nav-bar-item-bg};
+              color: #{$nav-bar-item-color};
               &:hover,
               &:focus,
               &.active {
-                background-color: transparent;
-                border-bottom-color: var(--quaternary);
+                background-color: #{$nav-bar-item-active-bg};
+                border-bottom-color: #{$nav-bar-item-border-active-color};
               }
               &:hover {
-                color: var(--primary);
+                color: #{$nav-bar-item-hover-color};
               }
               &:focus,
               &.active {
-                color: var(--quaternary);
+                color: #{$nav-bar-item-active-color};
               }
             }
           }
@@ -32,8 +42,8 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
       }
       .navigation-controls {
         position: fixed;
-        bottom: 10px;
-        right: 10px;
+        bottom: #{$nav-control-buttons-bottom-position};
+        right: #{$nav-control-buttons-right-position};
         padding: 0.5em;
         grid-gap: 0.5em;
         margin-bottom: env(safe-area-inset-bottom);
@@ -41,7 +51,7 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
         box-sizing: border-box;
         box-shadow: shadow("card");
         background: var(--secondary);
-        transition: bottom 0.2s ease-in;
+        transition: bottom 0.25s ease-in;
         z-index: 200;
         > *:not(:last-child) {
           margin-right: 0;
@@ -59,9 +69,15 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
       }
       @if $custom-nav-control-buttons-enabled == "true" {
         .navigation-controls {
+          padding: 0;
           box-shadow: none;
           background: transparent;
           align-items: center;
+          @if $nav-control-buttons-vertical-align == "true" {
+            display: flex;
+            flex-direction: column;
+            transition: right 0.25s ease-in;
+          }
           .btn:not(#create-topic) {
             padding: 0.75em 0.817em;
             border-radius: #{$nav-control-buttons-rounding};
@@ -78,7 +94,7 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
             }
           }
           #create-topic {
-            padding: 1.175em;
+            padding: 1.375em;
             border-radius: #{$create-topic-button-rounding};
             background: #{$create-topic-button-bg};
             .d-icon {
@@ -117,7 +133,7 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
   }
   #reply-control.draft {
     bottom: -60px;
-    transition: bottom 0.2s ease-in;
+    transition: bottom 0.25s ease-in;
   }
 }
 
@@ -129,9 +145,14 @@ body.nav-controls-hidden {
     .list-controls {
       .navigation-container .navigation-controls {
         bottom: -60px;
-        transition: bottom 0.2s ease-in;
+        transition: bottom 0.25s ease-in;
         @if $custom-nav-control-buttons-enabled == "true" {
           bottom: -70px;
+          @if $nav-control-buttons-vertical-align == "true" {
+            bottom: #{$nav-control-buttons-bottom-position};
+            right: -70px;
+            transition: right 0.25s ease-in;
+          }
         }
       }
     }
