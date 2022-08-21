@@ -57,6 +57,49 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
           display: none;
         }
       }
+      @if $custom-nav-control-buttons-enabled == "true" {
+        .navigation-controls {
+          box-shadow: none;
+          background: transparent;
+          align-items: center;
+          .btn:not(#create-topic) {
+            padding: 0.75em 0.817em;
+            border-radius: #{$nav-control-buttons-rounding};
+            background: #{$nav-control-buttons-bg};
+            .d-icon {
+              color: #{$nav-control-buttons-icon-color};
+            }
+            &:hover,
+            &:focus {
+              background: #{$nav-control-buttons-hover-bg};
+              .d-icon {
+                color: #{$nav-control-buttons-icon-hover-color};
+              }
+            }
+          }
+          #create-topic {
+            padding: 1.375em;
+            border-radius: #{$create-topic-button-rounding};
+            background: #{$create-topic-button-bg};
+            .d-icon {
+              width: 1.25em;
+              height: 1.25em;
+              margin-right: 0;
+              color: #{$create-topic-button-icon-color};
+            }
+            .d-button-label {
+              display: none;
+            }
+            &:hover,
+            &:focus {
+              background: #{$create-topic-button-hover-bg};
+              .d-icon {
+                color: #{$create-topic-button-icon-hover-color};
+              }
+            }
+          }
+        }
+      }
     }
   }
   #reply-control.draft {
@@ -74,6 +117,9 @@ body.nav-controls-hidden {
       .navigation-container .navigation-controls {
         bottom: -60px;
         transition: bottom 0.2s ease-in;
+        @if $custom-nav-control-buttons-enabled == "true" {
+          bottom: -70px;
+        }
       }
     }
     #reply-control.draft {

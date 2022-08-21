@@ -2,3 +2,47 @@ desktop_navigation_bar_enabled:
   type: bool
   default: false
   description: "Enable desktop navigation bar."
+custom_nav_control_buttons_enabled:
+  type: bool
+  default: false
+  description: "Change navigation control buttons style."
+nav_control_buttons_rounding:
+  type: string
+  default: "50%"
+  description: "Change navigation control buttons rounding (border-radius) except create-topic button. 50% is circle you can use px, em etc..."
+nav_control_buttons_bg:
+  type: string
+  default: "var(--primary-low)"
+  description: "Change navigation control buttons background color except create-topic button."
+nav_control_buttons_hover_bg:
+  type: string
+  default: "var(--primary-medium)"
+  description: "Change navigation control buttons hover background color except create-topic button."
+nav_control_buttons_icon_color:
+  type: string
+  default: "var(--primary-high)"
+  description: "Change navigation control buttons icon color except create-topic button icon color."
+nav_control_buttons_icon_hover_color:
+  type: string
+  default: "var(--primary-low)"
+  description: "Change navigation control buttons icon hover color except create-topic button icon color."
+create_topic_button_rounding:
+  type: string
+  default: "50%"
+  description: "Change create topic button rounding (border-radius). 50% is circle you can use px, em etc.."
+create_topic_button_bg:
+  type: string
+  default: "var(--tertiary)"
+  description: "Change create topic button background color."
+create_topic_button_hover_bg:
+  type: string
+  default: "var(--tertiary-hover)"
+  description: "Change create topic button hover background color."
+create_topic_button_icon_color:
+  type: string
+  default: "var(--secondary)"
+  description: "Change create topic button icon color."
+create_topic_button_icon_hover_color:
+  type: string
+  default: "var(--secondary)"
+  description: "Change create topic button icon hover color."
