@@ -97,6 +97,19 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
                 color: #{$create-topic-button-icon-hover-color};
               }
             }
+            &.open-draft {
+              background: #{$open-draft-button-bg};
+              .d-icon {
+                color: #{$open-draft-button-icon-color};
+              }
+              &:hover,
+              &:focus {
+                background: #{$open-draft-button-hover-bg};
+                .d-icon {
+                  color: #{$open-draft-button-icon-hover-color};
+                }
+              }
+            }
           }
         }
       }
