@@ -2,10 +2,62 @@ desktop_navigation_bar_enabled:
   type: bool
   default: false
   description: "Enable desktop navigation bar."
+nav_bar_item_padding_size:
+  type: string
+  default: "0.25em"
+  description: "Change navigation bar item padding size on sides. You should incrase this if you set background color to make a wider distance on sides. You can use px, em etc..."
+nav_bar_item_rounding:
+  type: string
+  default: "0px"
+  description: "Change navigation bar item rounding (border-radius). You can use px, em etc..."
+nav_bar_item_bg:
+  type: string
+  default: "transparent"
+  description: "Change navigation bar item background color except active item."
+nav_bar_item_color:
+  type: string
+  default: "var(--primary)"
+  description: "Change navigation bar item color except active item."
+nav_bar_item_active_bg:
+  type: string
+  default: "transparent"
+  description: "Change navigation bar active item background color."
+nav_bar_item_hover_color:
+  type: string
+  default: "var(--primary)"
+  description: "Change navigation bar item hover color except active item."
+nav_bar_item_active_color:
+  type: string
+  default: "var(--tertiary)"
+  description: "Change navigation bar active item color."
+nav_bar_items_border_bottom_size:
+  type: string
+  default: "3px"
+  description: "Change navigation bar items border bottom size. Set 0px to disable border bottom."
+nav_bar_items_border_bottom_color:
+  type: string
+  default: "transparent"
+  description: "Change navigation bar items border bottom color except active item."
+nav_bar_item_border_active_color:
+  type: string
+  default: "var(--tertiary)"
+  description: "Change navigation bar active border color."
 custom_nav_control_buttons_enabled:
   type: bool
   default: false
   description: "Change navigation control buttons style."
+nav_control_buttons_vertical_align:
+  type: bool
+  default: false
+  description: "Change navigation control buttons align to vertical."
+nav_control_buttons_bottom_position:
+  type: string
+  default: "1em"
+  description: "Change navigation control buttons bottom position. You can use px, em etc..."
+nav_control_buttons_right_position:
+  type: string
+  default: "1em"
+  description: "Change navigation control buttons right position. You can use px, em etc..."
 nav_control_buttons_rounding:
   type: string
   default: "50%"
