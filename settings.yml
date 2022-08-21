@@ -46,3 +46,19 @@ create_topic_button_icon_hover_color:
   type: string
   default: "var(--secondary)"
   description: "Change create topic button icon hover color."
+open_draft_button_bg:
+  type: string
+  default: "var(--primary-medium)"
+  description: "Change open draft button background color."
+open_draft_button_hover_bg:
+  type: string
+  default: "var(--primary-high)"
+  description: "Change open draft button hover background color."
+open_draft_button_icon_color:
+  type: string
+  default: "var(--secondary)"
+  description: "Change open draft button icon color."
+open_draft_button_icon_hover_color:
+  type: string
+  default: "var(--secondary)"
+  description: "Change open draft button icon hover color."
