@@ -1,6 +1,6 @@
 .navigation-topics,
 .categories-list,
-.tags-page,
+body[class*="tag-"]:not(.archetype-regular):not(.archetype-banner),
 body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
   .list-controls {
     .navigation-container {
@@ -52,7 +52,7 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
         box-shadow: shadow("card");
         background: var(--secondary);
         transition: bottom 0.25s ease-in;
-        z-index: 200;
+        z-index: 200; 
         > *:not(:last-child) {
           margin-right: 0;
         }
@@ -131,6 +131,21 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
       }
     }
   }
+  
+  // If footer nav active on iPhone
+  &.footer-nav-visible:not(.footer-nav-ipad) {
+    .list-controls {
+      .navigation-container {
+        .navigation-controls {
+          bottom: calc(var(--footer-nav-height) + #{$nav-control-buttons-bottom-position});
+        }
+      }
+    }
+    #reply-control.draft {
+      bottom: calc(-60px - var(--footer-nav-height));
+    }
+  }
+  
   #reply-control.draft {
     bottom: -60px;
     transition: bottom 0.25s ease-in;
@@ -140,28 +155,44 @@ body[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
 body.nav-controls-hidden {
   &.navigation-topics,
   &.categories-list,
-  &.tags-page,
+  &[class*="tag-"]:not(.archetype-regular):not(.archetype-banner),
   &[class*="category-"]:not(.archetype-regular):not(.archetype-banner) {
     .list-controls {
-      .navigation-container .navigation-controls {
-        bottom: -60px;
-        transition: bottom 0.25s ease-in;
-        @if $custom-nav-control-buttons-enabled == "true" {
-          bottom: -70px;
-          @if $nav-control-buttons-vertical-align == "true" {
-            bottom: #{$nav-control-buttons-bottom-position};
-            right: -70px;
-            transition: right 0.25s ease-in;
+      .navigation-container {
+        .navigation-controls {
+          bottom: -60px;
+          transition: bottom 0.25s ease-in;
+          @if $custom-nav-control-buttons-enabled == "true" {
+            bottom: -70px;
+            @if $nav-control-buttons-vertical-align == "true" {
+              right: -70px;
+              bottom: #{$nav-control-buttons-bottom-position};
+              transition: right 0.25s ease-in;
+            }
           }
         }
       }
     }
-    #reply-control.draft {
-      bottom: 0;
+  
+    // If footer nav active on iPhone
+    &.footer-nav-visible:not(.footer-nav-ipad) {
+      .list-controls {
+        .navigation-container {
+          .navigation-controls {
+            transition: bottom linear 0.1s;
+            @if $custom-nav-control-buttons-enabled == "true" {
+              @if $nav-control-buttons-vertical-align == "true" {
+                bottom: calc(var(--footer-nav-height) + #{$nav-control-buttons-bottom-position});
+                transition: right linear 0.1s;
+              }
+            }
+          }
+        }
+      }
     }
   }
-}
-
-body:not(.footer-nav-ipad) .footer-nav {
-  display: none;
+    
+  #reply-control.draft {
+    bottom: 0;
+  }
 }
