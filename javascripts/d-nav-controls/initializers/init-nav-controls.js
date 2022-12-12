@@ -10,7 +10,7 @@ export default {
             
       let scrollTop = window.scrollY
       const body = document.body;
-      const scrollMax = 30;
+      const scrollMax = 0;
       let lastScrollTop = 0;
       const hiddenNavClass = "nav-controls-hidden";
 
