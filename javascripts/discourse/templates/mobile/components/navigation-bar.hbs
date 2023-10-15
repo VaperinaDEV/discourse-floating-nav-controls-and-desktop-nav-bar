@@ -10,7 +10,11 @@
   <PluginOutlet
     @name="extra-nav-item"
     @connectorTagName="li"
-    @outletArgs={{hash category=this.category filterMode=this.filterMode}}
+    @outletArgs={{hash
+      category=this.category
+      tag=this.tag
+      filterMode=this.filterMode
+    }}
   />
   
   {{else}}
@@ -34,7 +38,11 @@
       <PluginOutlet
         @name="extra-nav-item"
         @connectorTagName="li"
-        @outletArgs={{hash category=this.category filterMode=this.filterMode}}
+        @outletArgs={{hash
+          category=this.category
+          tag=this.tag
+          filterMode=this.filterMode
+        }}
       />
     </ul>
   {{/if}}
